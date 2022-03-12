@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Cloudinary
+﻿namespace AM.Infrastructure
 {
     public class Credientials
     {

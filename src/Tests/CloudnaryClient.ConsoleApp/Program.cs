@@ -1,10 +1,10 @@
-﻿using Infrastructure.Cloudinary;
-using Infrastructure.Cloudinary.Interfaces;
+﻿using AM.Infrastructure;
+using AM.Infrastructure.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
-namespace CloudnaryClient.ConsoleApp
+namespace AM.Client.ConsoleApp
 {
     class Program
     {
@@ -12,11 +12,11 @@ namespace CloudnaryClient.ConsoleApp
         {
             // ID container registration
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<ICloudinaryService, CloudinaryService>()
+                .AddSingleton<IArtifactService, CloudinaryService>()
                 .BuildServiceProvider();
 
             // get cloudinaryservice object
-            var cloudinaryService = serviceProvider.GetService<ICloudinaryService>();
+            var cloudinaryService = serviceProvider.GetService<IArtifactService>();
             // get list of artifacts
             var list = await cloudinaryService.GetListAsync();
             foreach (var item in list)

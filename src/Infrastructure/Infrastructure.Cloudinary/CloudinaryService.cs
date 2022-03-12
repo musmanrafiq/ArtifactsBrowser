@@ -1,12 +1,12 @@
-﻿using CloudinaryDotNet;
+﻿using AM.Infrastructure.Interfaces;
+using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using Infrastructure.Cloudinary.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Cloudinary
+namespace AM.Infrastructure
 {
-    public class CloudinaryService : ICloudinaryService
+    public class CloudinaryService : IArtifactService
     {
         #region public methods
 

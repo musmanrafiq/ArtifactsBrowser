@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Cloudinary.Interfaces
+namespace AM.Infrastructure.Interfaces
 {
-    public interface ICloudinaryService
+    public interface IArtifactService
     {
         Task UploadImageAsync(string fileNameWithExtension);
         Task<List<string>> GetListAsync();
