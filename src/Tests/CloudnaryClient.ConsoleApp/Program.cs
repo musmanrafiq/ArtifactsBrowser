@@ -1,4 +1,6 @@
 ﻿using Infrastructure.Cloudinary;
+using Infrastructure.Cloudinary.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
@@ -8,8 +10,15 @@ namespace CloudnaryClient.ConsoleApp
     {
         static async Task Main(string[] args)
         {
-            var service = new CloudinaryService();
-            var list = await service.GetListAsync();
+            // ID container registration
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<ICloudinaryService, CloudinaryService>()
+                .BuildServiceProvider();
+
+            // get cloudinaryservice object
+            var cloudinaryService = serviceProvider.GetService<ICloudinaryService>();
+            // get list of artifacts
+            var list = await cloudinaryService.GetListAsync();
             foreach (var item in list)
                 Console.WriteLine(item);
         }
