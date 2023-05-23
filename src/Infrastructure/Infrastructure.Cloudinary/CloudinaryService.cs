@@ -1,7 +1,9 @@
-﻿using AM.Infrastructure.Interfaces;
+﻿using AM.Business.Models;
+using AM.Infrastructure.Interfaces;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AM.Infrastructure
@@ -32,6 +34,19 @@ namespace AM.Infrastructure
                 {
                     list.Add(resource.SecureUrl.AbsoluteUri);
                 }
+            }
+            return list;
+        }
+
+        public async Task<List<FolderModel>> GetFolderListAsync()
+        {
+            var list = new List<FolderModel>();
+            var cloudnary = GetService();
+            var allResources = await cloudnary.RootFoldersAsync();
+            if (allResources.StatusCode is System.Net.HttpStatusCode.OK)
+            {
+                var folders = allResources.Folders.Select(x => new FolderModel(x.Name, x.Path)).ToList();
+                return folders;
             }
             return list;
         }

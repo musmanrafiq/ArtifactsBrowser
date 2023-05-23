@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AM.Client.ConsoleApp", "Tests\CloudnaryClient.ConsoleApp\AM.Client.ConsoleApp.csproj", "{5399CB32-B77E-4400-A881-86D9161A6EC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.Client.Winform", "Presentation\AM.Client.Winform\AM.Client.Winform.csproj", "{7FBB2444-AAFA-4239-98A6-3483725E4A8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{5399CB32-B77E-4400-A881-86D9161A6EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5399CB32-B77E-4400-A881-86D9161A6EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5399CB32-B77E-4400-A881-86D9161A6EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBB2444-AAFA-4239-98A6-3483725E4A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBB2444-AAFA-4239-98A6-3483725E4A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBB2444-AAFA-4239-98A6-3483725E4A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBB2444-AAFA-4239-98A6-3483725E4A8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{287042B3-4D77-4B5A-9493-CA0AE19C2A24} = {A6A264AC-451E-4645-B3AE-7C1C99FA41A2}
 		{5399CB32-B77E-4400-A881-86D9161A6EC2} = {96D5B04B-A26E-4B52-99C5-2BABF899535F}
+		{7FBB2444-AAFA-4239-98A6-3483725E4A8B} = {96D5B04B-A26E-4B52-99C5-2BABF899535F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC33776E-5908-4317-AF42-1DDD3AC2B63E}
