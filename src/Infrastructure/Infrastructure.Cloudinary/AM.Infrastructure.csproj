@@ -1,15 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.14.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Business\AM.Business.Models\AM.Business.Models.csproj" />
   </ItemGroup>
-
 </Project>

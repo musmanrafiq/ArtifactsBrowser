@@ -10,13 +10,15 @@ namespace AM.Client.ConsoleApp
     {
         static async Task Main(string[] args)
         {
-            // ID container registration
+            // DI container registration
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IArtifactService, CloudinaryService>()
+                .AddKeyedSingleton<IArtifactService, S3Service>("S3")
+                .AddKeyedSingleton<IArtifactService, CloudinaryService>("Cloudinary")
+
                 .BuildServiceProvider();
 
             // get cloudinaryservice object
-            var cloudinaryService = serviceProvider.GetService<IArtifactService>();
+            var cloudinaryService = serviceProvider.GetKeyedService<IArtifactService>("S3");
             // get list of artifacts
             var list = await cloudinaryService.GetListAsync();
             foreach (var item in list)
